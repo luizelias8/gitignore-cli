@@ -1,0 +1,2 @@
+class GitignoreAPIError(Exception):
+    pass

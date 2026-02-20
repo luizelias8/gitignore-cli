@@ -1,0 +1,26 @@
+[project]
+name = "gitignore-cli"
+version = "1.0.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "luizelias8", email = "luizelias8@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "argparse>=1.4.0",
+    "requests>=2.32.5",
+]
+
+[project.scripts]
+gitignore = "gitignore_cli.cli:main"
+
+[build-system]
+requires = ["uv_build>=0.9.11,<0.10.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.0.2",
+    "responses>=0.26.0",
+]
