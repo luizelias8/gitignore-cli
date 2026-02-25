@@ -40,11 +40,5 @@ def fetch_list() -> list[str]:
     # vscode
     raw = response.text
 
-    technologies = []
-    for line in raw.splitlines(): # Exemplo de como fica depois de raw.splitlines(): ['python,node,linux', 'windows,macos', 'vscode']
-        for t in line.split(','):
-            tech = t.strip()
-            if tech:
-                technologies.append(tech)
-
+    technologies = [t.strip() for line in raw.splitlines() for t in line.split(',') if t.strip()]
     return sorted(technologies)
